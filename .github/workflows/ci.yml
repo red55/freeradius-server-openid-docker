@@ -20,5 +20,5 @@ jobs:
         env:
           NODE_ENV: production
         run: |
-          docker buildx build --tag red55/freeradius-server-openid:latest --tag red55/freeradius-server-openid:${{ github.ref_name }}
-          docker push red55/amnezia-wg
+          docker buildx build --tag red55/freeradius-server-openid:latest --tag red55/freeradius-server-openid:${{ github.ref_name }} .
+          docker push red55/freeradius-server-openid
