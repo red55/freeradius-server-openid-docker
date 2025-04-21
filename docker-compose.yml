@@ -1,0 +1,15 @@
+services:
+  freeradius:
+    container_name: freeradius-openid
+    build:
+      context: docker
+      args:
+        PAM_OAUTH2_VER: "v0.0.2"
+      tags:
+        - docker.io/red55/freeradius-server-openid:latest
+    command: freeradius
+    ports:
+      - 1812:1812/udp
+      - 1813:1813/udp
+    volumes:
+      - ./clients.conf:/opt/etc/raddb/clients.conf
